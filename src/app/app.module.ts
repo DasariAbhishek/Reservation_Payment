@@ -35,6 +35,6 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
   providers: [ReservationService],
-  bootstrap: [AppComponent,HomeComponent]
+  bootstrap: [AppComponent,HomeComponent,PaymentDetailsComponent]
 })
 export class AppModule { }
