@@ -1,0 +1,64 @@
+<div class="container-fluid">
+  <span><h1 style="text-align: center;">Reservation Form</h1></span>
+  <form [formGroup]="ReservationForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <select formControlName="quotaName" style=" text-align-last: center; width: 1520px;" class="form-control"
+      [(ngModel)]="service.formData.TrainId">
+        <option value="">Choose Quota</option>
+        <option *ngFor="let quota of quotas" value="{{quota}}">{{quota}}</option>
+        <!-- <option value="General">General</option>
+        <option value="Ladies">Ladies</option> -->
+      </select>
+      <!-- error block -->
+
+      <div class="invalid-feedback" *ngIf="isSubmitted && quotaName?.invalid">
+        <sup>*</sup>Please select quota
+      </div>
+    </div><br>
+
+    <div class="input;form-group">
+      &nbsp;&nbsp;&nbsp;
+
+      <input type="text" id="name" class="txt;form-control" placeholder="Name" required formControlName="name"
+      [(ngModel)]="service.formData.Passengers"> &nbsp;&nbsp;
+
+      <input type="text" id="age" formControlName="age" class="txt;form-control" placeholder="Age" required
+      [(ngModel)]="service.formData.Passengers">&nbsp;&nbsp;
+
+      <select name="Gender" id="gender" class="txt;form-control" formControlName="gender" [(ngModel)]="service.formData.Passengers">
+        <option value="" >Choose Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>&nbsp;&nbsp;
+
+      <input type="tel" id="phone" [(ngModel)]="service.formData.Passengers" formControlName="phone" class="txt;form-control" pattern="^\d{10}$" required placeholder="Phone Number">
+    </div>
+
+    <br>
+    <div class="form-group">
+      <button type="submit" style="margin-left: 20px;" class="btn btn-primary" (click)="Add()"><i class="fa fa-data"></i> +AddPassenger</button>
+    </div>
+    <br>
+    <div class="container;form-group">
+      <button type="submit" class="form-control  btn btn-info">Book Now</button>
+    </div>
+  </form>
+  {{ReservationForm.value | json}}
+</div>
+
+
+<style>
+  .container{
+    text-align: center;
+    width: 300px;
+    height: 200px;
+    padding-left: 50%;
+  }
+  .input{
+    text-align: center;
+  }
+  .txt{
+    height: 20px;
+  }
+</style>
