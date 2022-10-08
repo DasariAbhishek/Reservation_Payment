@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ReservationDetail } from './reservation-detail.model';
+import { NgForm } from '@angular/forms';
 @Injectable({
   providedIn: 'root'
 })

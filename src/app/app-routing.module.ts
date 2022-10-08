@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { PaymentDetailsComponent } from './payment-details/payment-details.component';
+import { SearchResultComponent } from './search-result/search-result.component';
 
 const routes : Routes = [
   {path:'home',component:HomeComponent},
-  {path:'payment',component:PaymentDetailsComponent}
+  {path:'payment',component:PaymentDetailsComponent},
+  {path:'searchresult',component:SearchResultComponent}
 ]
 
 @NgModule({

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators, FormArray } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators, FormArray, NgForm } from '@angular/forms';
 import { ReservationDetail } from '../shared/reservation-detail.model';
 import { ReservationService } from '../shared/reservation.service';
 
@@ -36,14 +36,13 @@ export class HomeComponent {
   });
 
 
-  onSubmit(): void {
-    console.log(this.ReservationForm);
-    this.isSubmitted = true;
-    if (!this.ReservationForm.valid) {
-      false;
-    } else {
-      console.log(JSON.stringify(this.ReservationForm.value));
-    }
+  onSubmit(form:NgForm){
+    this.service.postReservation().subscribe(
+      res => {
+
+      },
+      err => {console.log(err);}
+    )
   }
 
   Add(){

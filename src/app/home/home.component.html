@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <span><h1 style="text-align: center;">Reservation Form</h1></span>
-  <form [formGroup]="ReservationForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="ReservationForm" #form="ngForm">
 
     <div class="form-group">
       <select formControlName="quotaName" style=" text-align-last: center; width: 1520px;" class="form-control"
